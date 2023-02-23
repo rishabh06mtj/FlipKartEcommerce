@@ -2,7 +2,7 @@ package com.flipkart.genericUtility;
 
 public enum PropertyFileKeys {
 
-	BROWSER("browser"),URL("url"),USERNAME("username"),PASSWORD("password"),TIMEOUT("timeout");
+	BROWSER("browser"),URL("url"),TIMEOUT("timeout");
 	
 	private String keys;
 	private PropertyFileKeys(String keys)

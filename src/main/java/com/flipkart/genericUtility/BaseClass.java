@@ -1,5 +1,6 @@
 package com.flipkart.genericUtility;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BaseClass 
@@ -40,13 +41,13 @@ public class BaseClass
 		
 	}
 	
-//	@AfterClass(alwaysRun = true)
-//	public void classTearDown()
-//	{
-//		fileUtility.closePropertyFile();
-//	//	excelUtility.closeExcel();
-//		webDriverUtility.closeBrowser();
-//	}
+	@AfterClass(alwaysRun = true)
+	public void classTearDown()
+	{
+		fileUtility.closePropertyFile();
+		excelUtility.closeExcel();
+		webDriverUtility.closeBrowser();
+	}
 	
 
 
