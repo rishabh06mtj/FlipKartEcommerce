@@ -15,9 +15,12 @@ public class AddProductToTheCart extends BaseClass
 		homePage.mouseHoverToElectronics(webDriverUtility);
 		homePage.selectPowerBAnk();
 		homePage.clickOnRatingCheckBox();
+		homePage.waitForPowerBank(webDriverUtility, timeout);
 		homePage.clickOnParticularMobile(webDriverUtility);
+		
 		String data=excelUtility.getDataFromExcel("Sheet1",2,0);
 		webDriverUtility.swithToWindow(driver,data);
+		homePage.clickOnAddToCart();
 	    boolean flag=homePage.compareTheProductAndValidate(data);
 	    Assert.assertTrue(flag);
 	

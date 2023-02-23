@@ -30,10 +30,13 @@ private WebElement selectPowerBAnk;
 private WebElement clickOnRatingCheckBox;
 @FindBy(xpath ="//div[text()='Blue, Lithium Polymer']/preceding-sibling::a[text()='Mi 3i 10000 mAh Power Bank (Fast Charging, 18W)' and @class='s1Q9rs']")
 private WebElement clickOnParticularMobile;
-@FindBy(xpath ="//button[text()='Add to cart']")
+@FindBy(xpath ="//ul[@class='row']//button[text()='Add to cart']")
 private WebElement clickOnAddToCart;
 @FindBy(xpath ="//a[@class='_2Kn22P gBNbID']")
 private List<WebElement> listOfProducts;
+@FindBy(xpath ="//h1[text()='Power Banks']")
+private WebElement powerbanks;
+
 
 public  HomePage(WebDriver driver) 
 {
@@ -87,7 +90,7 @@ public boolean compareTheProductAndValidate(String product)
 	  {
 		  String product1 = webelement.getText();
 		  
-		  if(product1.equals(product))
+		  if(product1.contains(product))
 		  {
 			return true;
 		  }
@@ -95,7 +98,14 @@ public boolean compareTheProductAndValidate(String product)
 	  }
 	return false; 	
 }
-
+public void waitForPowerBank(WebDriverUtility webDriverUtility,long timeout)
+{
+	webDriverUtility.visibilityOfElement(timeout,powerbanks);
+}
+public void searchTextBox(String data)
+{
+	searchTextBox.sendKeys(data);
+}
 
 
 

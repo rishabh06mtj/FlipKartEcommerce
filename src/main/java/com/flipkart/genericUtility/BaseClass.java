@@ -41,13 +41,13 @@ public class BaseClass
 		
 	}
 	
-	@AfterClass(alwaysRun = true)
-	public void classTearDown()
-	{
-		fileUtility.closePropertyFile();
-		excelUtility.closeExcel();
-		webDriverUtility.closeBrowser();
-	}
+//	@AfterClass(alwaysRun = true)
+//	public void classTearDown()
+//	{
+//		fileUtility.closePropertyFile();
+//		excelUtility.closeExcel();
+//		webDriverUtility.closeBrowser();
+//	}
 	
 
 

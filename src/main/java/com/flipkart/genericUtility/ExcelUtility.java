@@ -43,6 +43,25 @@ public class ExcelUtility
 		String data=df.formatCellValue(workbook.getSheet(sheetName).getRow(rowNumber).getCell(cellNumber));
 		return data;
 	}
+	public void setExcelData(String sheetName,int rowNumber,int cellNumber,String value)
+	{
+		workbook.getSheet(sheetName).getRow(rowNumber).getCell(cellNumber).setCellValue(value);
+
+		try {
+			fos = new FileOutputStream(IConstantPath.EXCEL_PATH);
+		} catch (FileNotFoundException e1) 
+		{
+
+			e1.printStackTrace();
+		}
+		try {
+			workbook.write(fos);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+	}
+
 
 	public void closeExcel()
 	{
